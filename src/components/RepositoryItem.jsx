@@ -29,7 +29,12 @@ const RepositoryItem = (props) => (
 const styles = StyleSheet.create({
     container: {
         padding: 20,
-        paddingVertical: 5
+        paddingVertical: 5,
+        margin: 15,
+        borderWidth: 4,
+        borderRadius: 8,
+        borderColor: "#8d99ae",
+        backgroundColor: "#edf2f4"
     },
     language: {
         padding: 4,

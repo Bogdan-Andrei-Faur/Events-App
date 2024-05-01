@@ -4,7 +4,7 @@ const useRepositories = () => {
     const [repositories, setRepositories] = useState(null)
 
     const fetchRepositories = async () => {
-        const response = await globalThis.fetch("http://192.168.1.35:5001/api/repositories")
+        const response = await globalThis.fetch("http://172.20.10.3:5001/api/repositories")
         const json = await response.json()
         setRepositories(json)
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, ScrollView, TouchableWithoutFeedback } from "react-native";
+import { StyleSheet, View, Text, ScrollView, TouchableWithoutFeedback, Platform } from "react-native";
 import StyledText from "./StyledText.jsx";
 import Constants from "expo-constants";
 import theme from "../theme.js"
@@ -11,10 +11,10 @@ const styles = StyleSheet.create({
         paddingTop: Constants.statusBarHeight + 10,
         flexDirection: "row",
         paddingBottom: 10,
-        paddingLeft:10
+        paddingHorizontal:10
     },
     scroll: {
-        paddingBottom: 15
+        padding: 7
     },
     text: {
         color: theme.appBar.textSecondary,
@@ -22,6 +22,16 @@ const styles = StyleSheet.create({
     },
     active: {
         color: theme.appBar.textPrimary
+    },
+    platform: {
+        padding: 7,
+        borderRadius: 4,
+        overflow: "hidden",
+        backgroundColor: Platform.select ({
+            android: "green",
+            ios: "grey",
+            default: "#006992"
+        })
     }
 })
 
@@ -49,7 +59,7 @@ const AppBar = () => {
                 <AppBarTab to="/">Repositories</AppBarTab>
                 <AppBarTab to="/signin">Sign In</AppBarTab>
             </ScrollView>
-            
+            <Text style={styles.platform}>{Platform.select ({android: "Android", ios: "IOS", default: "Web"})}</Text>
         </View>
     )
 }

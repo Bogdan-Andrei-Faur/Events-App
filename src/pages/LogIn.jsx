@@ -19,6 +19,13 @@ const styles = StyleSheet.create({
     },
     form: {
         margin: 12
+    },
+    input: {
+        backgroundColor: "#edf2f4",
+        borderColor: "#8d99ae",
+        borderRadius: 8,
+        borderWidth: 4,
+        fontWeight: "bold"
     }
 })
 
@@ -51,10 +58,12 @@ export default function LogIn () {
                 return (
                     <View style={styles.form}>
                         <FormikInputValue 
+                            style={styles.input}
                             placeholder="Email"
                             name="email"/>
 
                         <FormikInputValue
+                            style={styles.input}
                             placeholder="Password"
                             name="password"/>
 
